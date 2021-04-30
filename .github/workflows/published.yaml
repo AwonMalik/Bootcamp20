@@ -6,7 +6,7 @@ name: Deploying
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -29,7 +29,10 @@ jobs:
         uses: action/setup-node@v2-beta
         with: 
          node-version: 12
-         - name:  Install Surge
+         
+         
+         - name: install surge
+ 
          run: npm install -g Surge
          - name: Run Suge
             run: Surge ./helpful-bootcamo-2020.surge.sh  ..token ${{sectets-Surge-Token}}
